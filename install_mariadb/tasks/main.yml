@@ -1,0 +1,10 @@
+---
+- name: Install MariaDB on CentOS
+  include_tasks: centos_install_mariadb.yaml
+  when: 
+    - ansible_os_family == "RedHat"
+
+- name: Install MariaDB on Debian
+  include_tasks: debian_install_mariadb.yaml
+  when: 
+    - ansible_os_family == "Debian"

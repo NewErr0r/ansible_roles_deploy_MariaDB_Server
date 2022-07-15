@@ -1,0 +1,26 @@
+---
+- name: Create DataBase
+  community.mysql.mysql_db:
+    name: "{{ name_new_database }}"
+    encoding: utf8
+    collation: utf8_bin
+    state: present
+    login_user: "{{ mysql_root_user }}" 
+    login_password: "{{ mysql_root_pass }}"
+
+- name: Create User for CentOS
+  community.mysql.mysql_user:
+    name: "{{ name_new_user_database }}"
+    password: "{{ pass_new_user_database }}"
+    priv: '*.*:ALL,GRANT'
+    host: '%'
+    state: present
+    login_user: "{{ mysql_root_user }}"
+    login_password: "{{ mysql_root_pass }}"
+
+- name: Remote access for MariaDB
+  template:
+    src: 50-server.cnf.j2
+    dest: "{{ debian_remote_access }}"
+  notify: 
+    - Restart MariaDB

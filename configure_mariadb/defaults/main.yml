@@ -1,0 +1,10 @@
+---
+name_new_database: "test_db"          #change (задать имя для новой БД) 
+name_new_user_database: "test_user"   #change (задать имя для нового пользователя БД)
+pass_new_user_database: "P@ssw0rd"    #change (задать пароль для нового пользователя БД)
+
+mysql_root_user: "root"
+mysql_root_pass: "P@ssw0rd"           #change (узаказть пароль для root к БД )   
+
+#allowed networks for remote database connection (bind-address=)
+allowed_networks: "0.0.0.0"           #change (узазать сеть для разрешения удалённого доступа)

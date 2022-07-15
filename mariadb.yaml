@@ -1,0 +1,10 @@
+---
+- name: Deploy MariaDB
+  hosts: all
+  become: true
+
+  roles:
+#    - { role: install_mariadb, when: ansible_os_family == 'RedHat'}
+#    - { role: install_mariadb, when: ansible_os_family == 'Debian'}
+#    - { role: configure_mariadb, when: ansible_os_family == 'RedHat'}
+#    - { role: configure_mariadb, when: ansible_os_family == 'Debian'}

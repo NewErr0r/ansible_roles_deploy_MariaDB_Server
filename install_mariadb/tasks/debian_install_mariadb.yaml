@@ -1,0 +1,14 @@
+--- 
+- name: Update all packages 
+  apt: 
+    name: "*"
+    state: latest 
+    update_cache: yes
+    force_apt_get: yes
+
+- name: Install packeges for MariaDB
+  apt: 
+    name: "{{ packages_debian }}"
+    state: latest
+  notify: 
+    - Started and Enabled MariaDB

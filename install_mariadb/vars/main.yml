@@ -1,0 +1,8 @@
+---
+packages_centos:
+  - mariadb-server
+  - python3-PyMySQL
+
+packages_debian:
+  - mariadb-server
+  - python3-pymysql
