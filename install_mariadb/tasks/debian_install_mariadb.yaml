@@ -10,5 +10,12 @@
   apt: 
     name: "{{ packages_debian }}"
     state: latest
-  notify: 
-    - Started and Enabled MariaDB
+
+- name: Started and Enabled MariaDB
+  service:
+    name: mariadb 
+    enabled: yes
+    state: started 
+
+- name: Configurations root password for MariaDB
+  command: mysqladmin -u root password {{ mysql_root_pass }}

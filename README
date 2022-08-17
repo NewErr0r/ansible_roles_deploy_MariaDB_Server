@@ -20,10 +20,3 @@ configure_mariadb/defaults/main.yml #описание в файле
 
 Для создания БД и пользователя и предоставления удалённого доступа на Debian раскомментировать в файлу "mariadb.yaml" строку:
 #    - { role: configure_mariadb, when: ansible_os_family == 'Debian'}
-
-
-
-P.S.
-В случае ошибки на Debian:
-    - vagrant ssh debian 
-    - mysql_secure_installation #пароль для подключения под root к БД
