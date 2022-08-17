@@ -24,3 +24,7 @@
     dest: "{{ centos_remote_access }}"
   notify: 
     - Restart MariaDB
+
+# через "{{ item }}"
+#         loop:
+# создавать n-кол-во пользователей и бд
